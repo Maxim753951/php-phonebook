@@ -5,14 +5,14 @@
     <meta charset="utf-8" />
 </head>
 <body>
-<h3>Новый</h3>
+<h3>Новый контакт</h3>
 <form action="add.php" method="POST">
     <p>Имя: <input type="text" name="name" size="22"/></p>
     <p>Номер: <input type="number" name="phone" /></p>
     <input type="submit" value="добавить" style=" width: 225px">
 </form>
 
-<h3>Старые</h3>
+<h3>Все контакты</h3>
 
 <?php
 
@@ -63,16 +63,11 @@ foreach ($array as $key => $row) {
             echo "<td>$column</td>";
         }
 
-        echo "<td>";
-        ?>
-        <form action="delete.php" method="POST">
-            <input type="hidden" name="key" value="<?php $key ?>"/>
-            <input type="submit" value="удалить">
-        </form>
-        <?php
+        echo "<td style='text-align: center'>";
+            ?>
+            <a href="/delete.php?key=<?php echo $key ?>">удалить</a>
+            <?php
         echo "</td>";
-
-
 
     echo "</tr>";
 }

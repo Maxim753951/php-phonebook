@@ -1,6 +1,6 @@
 <?php
 
-$key = $_POST["key"];
+$key = $_GET["key"];
 
 $json = file_get_contents(__DIR__ . '/data.json');
 $array = json_decode($json, true);
